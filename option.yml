@@ -1,0 +1,50 @@
+client:
+  # impl: 客户端实现类，不配置默认会使用JmModuleConfig.DEFAULT_CLIENT_IMPL
+  # 可配置:
+  #  html - 表示网页端
+  #  api - 表示APP端
+  # APP端不限ip兼容性好，网页端限制ip地区但效率高
+  impl: html
+
+  # domain: 域名配置，默认是 []，表示运行时自动获取域名。
+  # 可配置特定域名，如下：
+  # 程序会先用第一个域名，如果第一个域名重试n次失败，则换下一个域名重试，以此类推。
+  domain:
+    - 18comic-gquu.cc
+
+  # retry_times: 请求失败重试次数，默认为5
+  retry_times: 5
+download:
+  cache: true # 如果要下载的文件在磁盘上已存在，不用再下一遍了吧？默认为true
+  image:
+    decode: true # JM的原图是混淆过的，要不要还原？默认为true
+    suffix: .jpg # 把图片都转为.jpg格式，默认为null，表示不转换。
+  threading:
+    # image: 同时下载的图片数，默认是30张图
+    # 数值大，下得快，配置要求高，对禁漫压力大
+    # 数值小，下得慢，配置要求低，对禁漫压力小
+    # PS: 禁漫网页一次最多请求50张图
+    image: 30
+    # photo: 同时下载的章节数，不配置默认是cpu的线程数。例如8核16线程的cpu → 16.
+    photo: 32
+
+
+
+# 文件夹规则配置，决定图片文件存放在你的电脑上的哪个文件夹
+dir_rule:
+  # base_dir: 根目录。
+  # 此配置也支持引用环境变量，例如
+  # base_dir: ${JM_DIR}/下载文件夹/
+  base_dir: ./data/plugins/FateTrial_jmdownloader/picture
+plugins:
+  after_album:
+    # 把章节的所有图片合并为一个pdf的插件
+    # 使用前需要安装依赖库: [pip install img2pdf]
+
+    # img2pdf也支持合并整个本子，把上方的after_photo改为after_album即可。
+    # https://github.com/hect0x7/JMComic-Crawler-Python/discussions/258
+    # 配置到after_album时，需要修改filename_rule参数，不能写Pxx只能写Axx示例如下
+    - plugin: img2pdf
+      kwargs:
+        pdf_dir: ./data/plugins/FateTrial_jmdownloader/pdf # pdf存放文件夹
+        filename_rule: Aid # pdf命名规则，A代表album, name代表使用album.name也就是本子名称
