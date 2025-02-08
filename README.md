@@ -4,8 +4,10 @@
 pip install jmcomic -i https://pypi.org/project -U
 pip install img2pdf
 
+请自行前往插件根目录创建/picture 和 /pdf文件夹
 若JM域名过期，请前往option.yml自行更换
 此版本为1.0.0版本，会持续更新更多功能
+
 
 # 支持
 
