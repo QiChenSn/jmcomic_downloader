@@ -3,4 +3,4 @@ desc: 一个下载JM漫画的插件。禁止用于非法用途。
 help: 使用 /JM下载 本子ID 获取漫画。请输入正确的本子ID。
 version: v1.0 # 插件版本号
 author: FateTrial
-repo: https://github.com/FateTrial/JMdownloader
+repo: https://github.com/FateTrial/FateTrial_JMdownloader
