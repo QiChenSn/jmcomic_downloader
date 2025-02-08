@@ -24,7 +24,7 @@ class JMPlugin(Star):
         path = os.path.abspath(os.path.dirname(__file__))
         messages = event.get_messages()
         if not messages:
-            yield event.plain_result("请输入要下载的本子ID")
+            yield event.plain_result("请输入要下载的本子ID,如果有多页，请输入第一页的ID")
             return
         # 获取原始消息文本
         message_text = messages[0].text  
@@ -33,7 +33,7 @@ class JMPlugin(Star):
         # 分割消息文本
         if len(parts) < 2:  
             # 检查是否有本子ID
-            yield event.plain_result("请输入要下载的本子ID")
+            yield event.plain_result("请输入要下载的本子ID,如果有多页，请输入第一页的ID")
             return
         tokens = parts[1]  
         # 获取本子ID
@@ -45,3 +45,14 @@ class JMPlugin(Star):
         yield event.chain_result(
             [File(name=f"{tokens}.pdf", file=f"{path}/pdf/{tokens}.pdf")]
         )
+    @filter.command("JM_help")
+    async def show_help(self, event: AstrMessageEvent):
+        '''显示帮助信息'''
+        help_text = """JM下载插件指令说明：
+        
+/JM下载 本子ID - 下载JM漫画 如果有多页，请输入第一页的ID
+/JM_help - 显示本帮助信息
+
+powerd by FateTrial
+"""
+        yield event.plain_result(help_text)
