@@ -2,7 +2,7 @@
 
 使用前请自行使用CMD等方式下载JMcomic依赖库
 
-pip install jmcomic -i https://pypi.org/project -U
+pip install jmcomic -i https://pypi.org/project -U或pip install git+https://github.com/hect0x7/JMComic-Crawler-Python
 
 pip install img2pdf
 
