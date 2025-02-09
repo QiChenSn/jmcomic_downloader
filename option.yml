@@ -14,7 +14,7 @@ client:
 
   # retry_times: 请求失败重试次数，默认为5
   retry_times: 5
-postman:
+  postman:
     meta_data:
       # proxies: 代理配置，默认是 system，表示使用系统代理。
       # 以下的写法都可以:
@@ -36,7 +36,7 @@ postman:
       # 假如你要访问的是 `18comic.vip`，那么你配置的cookies也要来自于 `18comic.vip`，不能配置来自于 `jm-comic.club` 的cookies。
       # 如果你发现配置了cookies还是没有效果，大概率就是你配置的cookies和代码访问的域名不一致。
       cookies:
-        AVS: qkwehjjasdowqeq # 这个值是乱打的，不能用
+        AVS: asdsawdasd # 这个值是乱打的，不能用
 download:
   cache: true # 如果要下载的文件在磁盘上已存在，不用再下一遍了吧？默认为true
   image:
