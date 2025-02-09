@@ -12,7 +12,7 @@ import jmcomic
 # 导入此模块，需要先安装（pip install jmcomic -i https://pypi.org/project -U）
 # 创建配置对象
 # 注册插件的装饰器
-@register("JMdownloader", "FateTrial", "一个下载JM本子的插件", "1.0.0")
+@register("JMdownloader", "FateTrial", "一个下载JM本子的插件,修复了不能下载仅登录查看的本子请自行配置cookies", "1.0.1")
 class JMPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
