@@ -10,7 +10,11 @@ client:
   # 可配置特定域名，如下：
   # 程序会先用第一个域名，如果第一个域名重试n次失败，则换下一个域名重试，以此类推。
   domain:
-    - 18comic-gquu.cc
+    - 18comic-uc.vip
+    - 18comic-mhws.vip
+    - 18comic-uc.cc
+    - jmcomic-zzz.one
+    - jmcomic-zzz.org
 
   # retry_times: 请求失败重试次数，默认为5
   retry_times: 5
@@ -25,7 +29,7 @@ client:
       # proxies:
       #   http: 127.0.0.1:7890
       #   https: 127.0.0.1:7890
-      proxies: system
+      proxies: null
 
       # cookies: 帐号配置，默认是 null，表示未登录状态访问JM。
       # 禁漫的大部分本子，下载是不需要登录的；少部分敏感题材需要登录才能看。
@@ -36,7 +40,7 @@ client:
       # 假如你要访问的是 `18comic.vip`，那么你配置的cookies也要来自于 `18comic.vip`，不能配置来自于 `jm-comic.club` 的cookies。
       # 如果你发现配置了cookies还是没有效果，大概率就是你配置的cookies和代码访问的域名不一致。
       cookies:
-        AVS: asdsawdasd # 这个值是乱打的，不能用
+        AVS: null # 这个值是乱打的，不能用
 download:
   cache: true # 如果要下载的文件在磁盘上已存在，不用再下一遍了吧？默认为true
   image:
