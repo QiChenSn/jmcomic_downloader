@@ -3,7 +3,6 @@ from astrbot.api.message_components import File
 from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult
 from astrbot.api.star import Context, Star, register
 from astrbot.api.all import *
-
 import httpx
 import json
 import asyncio
@@ -87,7 +86,7 @@ class JMPlugin(Star):
         
 /jm下载 本子ID - 下载JM漫画 如果有多页，请输入第一页的ID
 /jm_help - 显示本帮助信息
-
+测试
 powerd by FateTrial
 """
         yield event.plain_result(help_text)
