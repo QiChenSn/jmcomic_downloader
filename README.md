@@ -22,13 +22,13 @@
 原开发者：FateTrial
 [项目地址](https://github.com/FateTrial/FateTrial_JMdownloader)
 
-#增加的功能
+# 增加的功能
 
 jmr随机获取ID尝试下载
 
 检测本子页数，超过设定值将取终止下载任务
 
-#已知的问题
+# 已知的问题
 
 部分本子无法正常下载（表现为创建了pdf文件但大小为0等等）
 
