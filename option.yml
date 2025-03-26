@@ -62,8 +62,13 @@ dir_rule:
   # base_dir: 根目录。
   # 此配置也支持引用环境变量，例如
   # base_dir: ${JM_DIR}/下载文件夹/
-  base_dir: ./data/plugins/FateTrial_jmdownloader/picture
+  base_dir: ./data/plugins/jmcomic_downloader/picture
 plugins:
+  before_album:
+    - plugin: skip_too_long_book
+      kwargs:
+        #设置最大页数限制
+        max_pages: 100
   after_album:
     # 把章节的所有图片合并为一个pdf的插件
     # 使用前需要安装依赖库: [pip install img2pdf]
@@ -73,5 +78,6 @@ plugins:
     # 配置到after_album时，需要修改filename_rule参数，不能写Pxx只能写Axx示例如下
     - plugin: img2pdf
       kwargs:
-        pdf_dir: ./data/plugins/FateTrial_jmdownloader/pdf # pdf存放文件夹
+        pdf_dir: ./data/plugins/jmcomic_downloader/pdf # pdf存放文件夹
         filename_rule: Aid # pdf命名规则，A代表album, name代表使用album.name也就是本子名称
+        delete_original_file: true #是否自动删除图片

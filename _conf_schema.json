@@ -1,0 +1,25 @@
+{
+    "RandomRange": {
+        "description": "随机下载配置",
+        "type": "object",
+        "hint": "可修改调用jmr命令时ID最小值,最大值以及最大重试次数",
+        "items": {
+            "IDmin": {
+                "description": "ID最小值",
+                "type": "int",
+                "default":110000
+            },
+            "IDmax": {
+                "description": "ID最大值",
+                "type": "int",
+                "default":1200000
+            }
+        }
+    },
+	"max_pages":{
+		"description": "最大页数限制",
+		"type": "int",
+		"hint": "请在data\\plugins\\jmcomic_downloader目录下的option.yml中配置max_pages",
+		"obvious_hint": true
+	}
+}
