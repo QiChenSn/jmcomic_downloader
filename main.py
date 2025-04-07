@@ -128,7 +128,7 @@ class JMPlugin(Star):
         '''显示帮助信息'''
         help_text = """jmcomic_downloader指令说明：    
 /jm ID - 下载JM漫画 如果有多页，请输入第一页的ID
-/jmr -随机下载
+/jmr -随机下载(实验性功能) 
 /jm_help - 显示本帮助信息
 """
         yield event.plain_result(help_text)
